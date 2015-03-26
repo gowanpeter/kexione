@@ -1,0 +1,39 @@
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'EXCEPTION in WaitForCommand()' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'Runtime failure details:' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - "Exception: <class 'channel.CSocketError'>" 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'Value = Broken Pipe' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'Traceback (innermost last):' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - '  File "2.7/src/debug/tserver/netserver.pyc", line 1315, in WaitForCommand\n' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - '  File "2.7/src/debug/tserver/channel.pyc", line 558, in ReceivePacket\n' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - '  File "2.7/src/debug/tserver/channel.pyc", line 705, in __ReadRawPacket\n' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - '  File "2.7/src/debug/tserver/channel.pyc", line 789, in __InternalReadRawPacket\n' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - '  File "2.7/src/debug/tserver/channel.pyc", line 750, in __ReadBytes\n' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'NETSERVER PROGRAM STOPPED' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'QUIT=TRUE' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'THREADS=' [] 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'CURRENT THREAD=' -1 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'STACK = None' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'FRAMEIDX' None 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'netserver CLOSECHANNEL' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'STOPPING TRACE ON QUIT' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'EXITING TO RUN' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'finish exec' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'STOP TRACE AFTER RUN' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'EXITING DEBUG SESSION IN DBGSERVER' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'Run complete' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'SERVER RUNFILE EXITED' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'NETSERVER PROGRAM STOPPED' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'QUIT=TRUE' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'THREADS=' [] 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'CURRENT THREAD=' -1 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'STACK = None' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'FRAMEIDX' None 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'STOPPING DEBUG' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'RESET' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'setting __fClient to' None 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'RESET' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - <bound method CDbgServer.destroy of <dbgserver.CDbgServer instance at 0x7f7264aa3cf8>> 'called' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'RESET' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'netserver CLOSECHANNEL' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'netserver CLOSECHANNEL' 
+wingdbg - 2015/03/20 21:50:28 - 6071 - 'netserver CLOSECHANNEL' 
