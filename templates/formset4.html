@@ -1,0 +1,13 @@
+<!--If you opt to use this third method and you don’t iterate over the fields with a {% for %} loop, you’ll need to render the primary key field. For example, if you were rendering the name and age fields of a model:-->
+
+<form method="post" action="">
+    {{ formset.management_form }}
+    {% for form in formset %}
+        {{ form.id }}
+        <ul>
+            <li>{{ form.name }}</li>
+            <li>{{ form.age }}</li>
+        </ul>
+    {% endfor %}
+</form>
+<!--Notice how we need to explicitly render {{ form.id }}. This ensures that the model formset, in the POST case, will work correctly. (This example assumes a primary key named id. If you’ve explicitly defined your own primary key that isn’t called id, make sure it gets rendered.-->)

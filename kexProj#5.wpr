@@ -1,0 +1,56 @@
+#!wing
+#!version=5.0
+##################################################################
+# Wing IDE project file                                          #
+##################################################################
+[project attributes]
+debug.launch-configs = (1,
+                        {'launch-fywnKSHQ0mYlyvVq': ({},
+        {'buildcmd': ('project',
+                      ('',
+                       '')),
+         'env': ('project',
+                 []),
+         'name': u'Launch manage.py',
+         'pyexec': ('project',
+                    ''),
+         'pypath': ('project',
+                    ''),
+         'pyrunargs': ('project',
+                       '-u'),
+         'runargs': 'runserver --noreload 8000',
+         'rundir': ('project',
+                    '')})})
+debug.named-entry-points = (1,
+                            {'url': ({},
+                                     {'auto-show': True,
+                                      'launch-id': ('project',
+        (u'http://127.0.0.1:8000/admin/',
+         'launch-fywnKSHQ0mYlyvVq')),
+                                      'loc': loc('kexi/urls.py')})})
+proj.directory-list = [{'dirloc': loc('.'),
+                        'excludes': [u'vv/autofixtures.py',
+                                     u'vv/Piece_Glaze_Publication.py',
+                                     u'vv/aaautofixtures.py',
+                                     u'vv/views.py',
+                                     u'vv/aadmin.py',
+                                     u'vv/aaadmin.py',
+                                     u'vv',
+                                     u'vv/aautofixtures.py',
+                                     u'autoYield.py'],
+                        'filter': '*',
+                        'include_hidden': False,
+                        'recursive': True,
+                        'watch_for_changes': True},
+                       {'dirloc': loc('vv'),
+                        'excludes': (),
+                        'filter': u'*',
+                        'include_hidden': False,
+                        'recursive': True,
+                        'watch_for_changes': True}]
+proj.file-type = 'shared'
+proj.launch-config = {loc('manage.py'): ('custom',
+        (u'',
+         'launch-fywnKSHQ0mYlyvVq'))}
+proj.main-file = loc('manage.py')
+testing.test-framework = {loc('manage.py'): ':internal djangotest'}

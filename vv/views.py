@@ -1,9 +1,21 @@
-from django.shortcuts import render, render_to_response, RequestContext
-from vv.forms import MyPieceForm, MyGlazeLookupForm, DocumentationForm, ConditionForm, ExhibitionLookupForm, HeathLineLookupForm, LogoForm, MakerLookupForm, MaterialLookupForm, MethodLookupForm, PublicationForm, SetCollectionForm
 
-def home(request):
+from django.shortcuts import render, render_to_response, RequestContext, get_object_or_404
 
-    form = MyPieceForm(request.POST or None)
+#from vv.forms import MyPieceForm, PieceModelForm, MyGlazeLookupForm, DocumentationForm, ConditionForm, ExhibitionLookupForm, HeathLineLookupForm, LogoForm, MakerLookupForm, MaterialLookupForm, MethodLookupForm, PublicationForm, SetCollectionForm, NameForm
+
+#from vv.forms import PieceModelForm, GlazeLookupModelForm
+#from django.http import HttpResponseRedirect
+#from django.views.generic import CreateView
+
+#from django.forms.models import modelformset_factory
+
+from vv.models import Piece
+
+
+
+def PieceView(request):
+
+    form = PieceModelForm(request.POST or None)
 
     if form.is_valid():
         save_it = form.save(commit=False)
@@ -13,10 +25,21 @@ def home(request):
                                 locals(),
                                 context_instance=RequestContext(request))
 
+
+#def PieceView(request, piece_id) :
+    #class PieceModelForm(forms.ModelForm):
+        #class Meta:
+            #model = Piece
+            #fields = "__all__"
+
+    #model = get _object_or_404(Piece, pk = piece_id)
+    #form = PieceModelForm(instance = piece)
+
+    #return render(request, 'iterateModel.html', { 'form': form})
 
 def GlazeView(request):
 
-    form = MyGlazeLookupForm(request.POST or None)
+    form = GlazeLookupModelForm(request.POST or None)
 
     if form.is_valid():
         save_it = form.save(commit=False)
@@ -24,8 +47,10 @@ def GlazeView(request):
 
 
     return render_to_response("kk.html",
-                                locals(),
-                                context_instance=RequestContext(request))
+                              locals(),
+                              context_instance=RequestContext(request))
+
+
 
 def DocumentationView(request):
 
@@ -37,8 +62,8 @@ def DocumentationView(request):
 
 
     return render_to_response("kk.html",
-                                locals(),
-                                context_instance=RequestContext(request))
+                              locals(),
+                              context_instance=RequestContext(request))
 
 def ConditionView(request):
 
@@ -50,14 +75,14 @@ def ConditionView(request):
 
 
     return render_to_response("kk.html",
-                                locals(),
-                                context_instance=RequestContext(request))
+                              locals(),
+                              context_instance=RequestContext(request))
 
 
 def ExhibitionLookupView(request):
 
     form = ExhibitionLookupForm
-    
+
     Form(request.POST or None)
 
     if form.is_valid():
@@ -66,8 +91,8 @@ def ExhibitionLookupView(request):
 
 
     return render_to_response("kk.html",
-                                locals(),
-                                context_instance=RequestContext(request))
+                              locals(),
+                              context_instance=RequestContext(request))
 
 
 def HeathLineLookupView(request):
@@ -80,8 +105,8 @@ def HeathLineLookupView(request):
 
 
     return render_to_response("kk.html",
-                                locals(),
-                                context_instance=RequestContext(request))
+                              locals(),
+                              context_instance=RequestContext(request))
 
 
 
@@ -96,8 +121,8 @@ def LogoView(request):
 
 
     return render_to_response("kk.html",
-                                locals(),
-                                context_instance=RequestContext(request))
+                              locals(),
+                              context_instance=RequestContext(request))
 
 def MakerLookupView(request):
 
@@ -110,8 +135,8 @@ def MakerLookupView(request):
 
 
     return render_to_response("kk.html",
-                                locals(),
-                                context_instance=RequestContext(request))
+                              locals(),
+                              context_instance=RequestContext(request))
 
 
 def MaterialLookupView(request):
@@ -125,8 +150,8 @@ def MaterialLookupView(request):
 
 
     return render_to_response("kk.html",
-                                locals(),
-                                context_instance=RequestContext(request))
+                              locals(),
+                              context_instance=RequestContext(request))
 
 
 def MethodLookupView(request):
@@ -140,8 +165,8 @@ def MethodLookupView(request):
 
 
     return render_to_response("kk.html",
-                                locals(),
-                                context_instance=RequestContext(request))
+                              locals(),
+                              context_instance=RequestContext(request))
 
 
 def PublicationView(request):
@@ -155,8 +180,8 @@ def PublicationView(request):
 
 
     return render_to_response("kk.html",
-                                locals(),
-                                context_instance=RequestContext(request))
+                              locals(),
+                              context_instance=RequestContext(request))
 
 
 def SetCollectionView(request):
@@ -170,8 +195,8 @@ def SetCollectionView(request):
 
 
     return render_to_response("kk.html",
-                                locals(),
-                                context_instance=RequestContext(request))
+                              locals(),
+                              context_instance=RequestContext(request))
 
 
 

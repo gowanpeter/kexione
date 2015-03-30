@@ -3,11 +3,11 @@ from django.conf.urls import patterns, url
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from vv import views
 
 urlpatterns = patterns('',
 
-    url(r'^home$', 'vv.views.home', name='home'),
+
+    url(r'^piece/(?P<piece_id>\w{0,50})/$', 'vv.views.PieceView', name='piece'),
     url(r'^glaze$', 'vv.views.GlazeView', name='glaze'),
     url(r'^documentation$', 'vv.views.DocumentationView', name='documentation',),
     url(r'^condition$', 'vv.views.ConditionView', name='condition',),

@@ -92,5 +92,5 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS =(
     os.path.join(BASE_DIR, 'templates'),
     os.path.join(BASE_DIR, 'templates/admin'),
-    os.path.join(BASE_DIR, 'templates/admin/djapp'),
+    os.path.join(BASE_DIR, 'templates/admin/vv'),
     )

@@ -1,56 +1,41 @@
+
+#from django import forms
+#from django.forms import ModelForm
+#from django.forms.formsets import formset_factory
+#from django.forms.models import inlineformset_factory
+#from vv.models import Piece, GlazeLookup, Documentation, Condition, ExhibitionLookup, HeathLineLookup, Logo, MakerLookup, MaterialLookup, MethodLookup, PublicationLookup, SetCollection
+
 from django import forms
-from vv.models import Piece, GlazeLookup, Documentation, Condition, ExhibitionLookup, HeathLineLookup, Logo, MakerLookup, MaterialLookup, MethodLookup, PublicationLookup, SetCollection
 from django.forms import ModelForm
-
-from vv.models import Widget
-
-#class WidgetForm(forms.ModelForm):
-        #def __init__(self, *args, **kwargs):
-        #super(WidgetForm, self).__init__(*args, **kwargs)
-        #self.fields['my_extra_field'] = forms.CharField()
-
-        #class Meta:
-        #model = Widget
-#now, to admin.py
+from django.forms.formsets import formset_factory
+from django.forms.models import inlineformset_factory
+from vv.models import Piece, GlazeLookup
 
 
-#class PieceForm(forms.ModelForm):
-        #class Meta:
-        #model = Piece
-        #fields = "__all__"
+class PieceModelForm(forms.ModelForm):
+        class Meta:
+                model = Piece
+                fields = "__all__"
 
-class MyPieceForm(forms.Form):
-        model = Piece
-        #fields = "__all__"
-        field1 = forms.ModelChoiceField(queryset=GlazeLookup.objects.all())
-
-#Create the form class
-#class GlazeLookupForm(forms.ModelForm):
-        #class Meta:
-        #model = GlazeLookup
-        #fields = "__all__"
 
 class MyGlazeLookupForm(forms.Form):
         model = GlazeLookup
         field1 = forms.ModelChoiceField(queryset=GlazeLookup.objects.all())
 
-#form to add a glaze
-#form = GlazeLookupForm(ModelForm)
+class GlazeLookupModelForm(ModelForm):
+        class Meta:
+                model = GlazeLookup
+                fields ="__all__"
 
-#form to change an existing glaze
-#glaze = GlazeLookup.objects.get(pk=1)
-#form = GlazeLookupForm(instance=glaze)
 
-#many to many
-#Create the form class
 class DocumentationForm(forms.ModelForm):
         class Meta:
                 model = Documentation
                 fields = "__all__"
 
-#class MyDocumentationForm(forms.Form):
-                #location = forms.MultipleModelChoiceField(
-                        #queryset=Documentation.objects.all())
+##class MyDocumentationForm(forms.Form):
+                ##location = forms.MultipleModelChoiceField(
+                        ##queryset=Documentation.objects.all())
 
 
 class ExhibitionLookupForm(forms.ModelForm):
@@ -58,9 +43,9 @@ class ExhibitionLookupForm(forms.ModelForm):
                 model = ExhibitionLookup
                 fields = "__all__"
 
-#class MyExhibitionLookupForm(forms.Form):
-                #location = forms.MultipleModelChoiceField(
-                        #queryset=Exhibition.objects.all())
+##class MyExhibitionLookupForm(forms.Form):
+                ##location = forms.MultipleModelChoiceField(
+                        ##queryset=Exhibition.objects.all())
 
 class ConditionForm(forms.ModelForm):
         class Meta:

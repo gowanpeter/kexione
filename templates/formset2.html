@@ -1,0 +1,9 @@
+<!--Second, you can manually render the formset, but let the form deal with itself:-->
+
+<form method="post" action="">
+    {{ formset.management_form }}
+    {% for form in formset %}
+        {{ form }}
+    {% endfor %}
+</form>
+When you manually render the forms yourself, be sure to render the management form as shown above. See the management form documentation.

@@ -1,5 +1,3 @@
-
-
 from __future__ import unicode_literals
 from django.db import models
 
@@ -8,7 +6,6 @@ class Widget(models.Model):
     #next: forms.py
 
 class Piece(models.Model):
-    id = models.AutoField (primary_key=True)
     catalogue_id = models.CharField(max_length= 8)
     heath_id = models.CharField(max_length= 8, blank=True)
     piece_name = models.CharField(max_length=6, blank=True)
@@ -24,7 +21,7 @@ class Piece(models.Model):
     weight_grams = models.IntegerField(blank=True, null=True)
     cataloguer = models.CharField(max_length=8, blank=True)
     catalogue_date = models.DateField(blank=True, null=True)
-    
+
     def __str__(self):
         return self.piece_name
 
@@ -74,7 +71,7 @@ class ExhibitionLookup(models.Model):
 
     def __str__(self):
         return self.exhibition_name
-    
+
 class exhibition_link_piece(models.Model):
     piece = models.ForeignKey(Piece)
     exhibition = models.ForeignKey(ExhibitionLookup)
@@ -83,7 +80,7 @@ class exhibition_link_piece(models.Model):
 
 class GlazeLookup(models.Model):
     glaze_name = models.CharField(max_length=8, blank= False, default = 'boola', unique = True)
-    glaze_pieces = models.ManyToManyField(Piece, through="glaze_link_piece")
+    glaze_pieces = models.ManyToManyField(Piece, through= 'glaze_link_piece', through_fields = ('glazeLookup', 'piece'))
     glaze_description = models.CharField(max_length=12, blank=True)
     glaze_begin_date = models.DateField(blank=True, null=True)
     glaze_end_date = models.DateField(blank=True, null=True)
@@ -93,7 +90,7 @@ class GlazeLookup(models.Model):
 
 class glaze_link_piece(models.Model):
     piece = models.ForeignKey(Piece)
-    glaze = models.ForeignKey(GlazeLookup)
+    glazeLookup = models.ForeignKey(GlazeLookup)
     batch =  models.CharField(max_length=12, blank= False, default = '200')
 
     def __str__(self):
@@ -127,10 +124,10 @@ class Logo(models.Model):
 
     def __str__(self):
         return self.Logo_name
-    
+
 class logo_link_piece(models.Model):
     Piece = models.ForeignKey(Piece)
-    Logo = models.ForeignKey(Logo)    
+    Logo = models.ForeignKey(Logo)
     feature =  models.CharField(max_length=12, blank= False, default = 'too true')
 
 
