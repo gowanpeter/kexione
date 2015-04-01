@@ -3,11 +3,11 @@ from django.shortcuts import render, render_to_response, RequestContext, get_obj
 
 #from vv.forms import MyPieceForm, PieceModelForm, MyGlazeLookupForm, DocumentationForm, ConditionForm, ExhibitionLookupForm, HeathLineLookupForm, LogoForm, MakerLookupForm, MaterialLookupForm, MethodLookupForm, PublicationForm, SetCollectionForm, NameForm
 
-#from vv.forms import PieceModelForm, GlazeLookupModelForm
-#from django.http import HttpResponseRedirect
-#from django.views.generic import CreateView
+from vv.forms import PieceModelForm, GlazeLookupModelForm
+from django.http import HttpResponseRedirect
+from django.views.generic import CreateView
 
-#from django.forms.models import modelformset_factory
+from django.forms.models import modelformset_factory
 
 from vv.models import Piece
 

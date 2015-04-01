@@ -1,15 +1,10 @@
 
-#from django import forms
-#from django.forms import ModelForm
-#from django.forms.formsets import formset_factory
-#from django.forms.models import inlineformset_factory
-#from vv.models import Piece, GlazeLookup, Documentation, Condition, ExhibitionLookup, HeathLineLookup, Logo, MakerLookup, MaterialLookup, MethodLookup, PublicationLookup, SetCollection
-
 from django import forms
 from django.forms import ModelForm
 from django.forms.formsets import formset_factory
 from django.forms.models import inlineformset_factory
-from vv.models import Piece, GlazeLookup
+from vv.models import Piece, GlazeLookup, Documentation, Condition, ExhibitionLookup, HeathLineLookup, Logo, MakerLookup, MaterialLookup, MethodLookup, PublicationLookup, SetCollection
+
 
 
 class PieceModelForm(forms.ModelForm):

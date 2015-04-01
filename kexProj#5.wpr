@@ -49,7 +49,10 @@ proj.directory-list = [{'dirloc': loc('.'),
                         'recursive': True,
                         'watch_for_changes': True}]
 proj.file-type = 'shared'
-proj.launch-config = {loc('manage.py'): ('custom',
+proj.launch-config = {loc('kexi/settings.py'): ('project',
+        (u'',
+         'launch-fywnKSHQ0mYlyvVq')),
+                      loc('manage.py'): ('custom',
         (u'',
          'launch-fywnKSHQ0mYlyvVq'))}
 proj.main-file = loc('manage.py')

@@ -30,15 +30,20 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
+  #  'admin_tools',
+    #'admin_tools.theming',
+    #'admin_tools.menu',
+    #'admin_tools.dashboard',
     'django.contrib.auth',
+    'django.contrib.sites',
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vv',
     'autofixture',
-)
+    )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -82,12 +87,42 @@ USE_L10N = True
 
 USE_TZ = True
 
+#ADMIN_TOOLS_MENU = 'kexi.menu.CustomMenu'
+#ADMIN_TOOLS_INDEX_DASHBOARD = 'kexi.dashboard.CustomIndexDashboard'
+#ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'kexi.dashboard.CustomAppIndexDashboard'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+#import os.path
+# Additional locations of static files
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+    )
+
+
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    ## Don't forget to use absolute paths, not relative paths.
+    #os.path.join(
+        #os.path.dirname(__file__),
+        #'static',
+    #),
+
+
 STATIC_URL = '/static/'
 #Template location
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.request',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages'
+    )
 
 TEMPLATE_DIRS =(
     os.path.join(BASE_DIR, 'templates'),
