@@ -5,9 +5,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 urlpatterns = patterns('',
-
-
-    url(r'^piece/(?P<piece_id>\w{0,50})/$', 'vv.views.PieceView', name='piece'),
+    #url(r'^piece/(?P<piece_id>\w{0,50})/$', 'vv.views.PieceView', name='piece'),
     url(r'^glaze$', 'vv.views.GlazeView', name='glaze'),
     url(r'^documentation$', 'vv.views.DocumentationView', name='documentation',),
     url(r'^condition$', 'vv.views.ConditionView', name='condition',),

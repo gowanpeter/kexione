@@ -5,7 +5,22 @@
 ##################################################################
 [project attributes]
 debug.launch-configs = (1,
-                        {'launch-fywnKSHQ0mYlyvVq': ({},
+                        {'launch-F5Hh49TKa3BrupKf': ({'shared': False},
+        {'buildcmd': ('default',
+                      None),
+         'env': ('project',
+                 [u'']),
+         'name': 'debug_tb_url',
+         'pyexec': ('project',
+                    u''),
+         'pypath': ('project',
+                    ''),
+         'pyrunargs': ('project',
+                       '-u'),
+         'runargs': u'sudo',
+         'rundir': ('default',
+                    u'')}),
+                         'launch-fywnKSHQ0mYlyvVq': ({},
         {'buildcmd': ('project',
                       ('',
                        '')),
@@ -54,6 +69,6 @@ proj.launch-config = {loc('kexi/settings.py'): ('project',
          'launch-fywnKSHQ0mYlyvVq')),
                       loc('manage.py'): ('custom',
         (u'',
-         'launch-fywnKSHQ0mYlyvVq'))}
+         'launch-F5Hh49TKa3BrupKf'))}
 proj.main-file = loc('manage.py')
 testing.test-framework = {loc('manage.py'): ':internal djangotest'}

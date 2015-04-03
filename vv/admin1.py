@@ -7,7 +7,7 @@ from vv.models import Piece, Condition, PublicationLookup, publication_link_piec
 #TabularInline
 #StackedInline
 
-class glaze_link_piece(admin.ModelAdmin.filter_horizontal):
+class glaze_link_pieceInline(admin.TabularInline):
    model = GlazeLookup.glaze_pieces.through
    extra = 1
    #form = MyGlazeLookupForm
@@ -26,10 +26,10 @@ class PieceAdmin(admin.ModelAdmin):
          }),
    ]
    date_hierarchy = 'manufactured_date'
-   #inlines =  (glaze_link_pieceInline,)
+   inlines =  (glaze_link_pieceInline,)
 
 class GlazeLookupAdmin(admin.ModelAdmin):
-   #inlines =  (glaze_link_pieceInline,)
+   inlines =  (glaze_link_pieceInline,)
    exclude = ('glaze_pieces',)
 
 admin.site.register(Piece, PieceAdmin)

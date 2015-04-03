@@ -26,14 +26,13 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
+
+INTERNAL_IPS = ('127.0.0.1')
 # Application definition
 
 INSTALLED_APPS = (
-  #  'admin_tools',
-    #'admin_tools.theming',
-    #'admin_tools.menu',
-    #'admin_tools.dashboard',
     'django.contrib.auth',
     'django.contrib.sites',
     'django.contrib.admin',
@@ -41,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
     'vv',
     'autofixture',
     )
@@ -53,6 +53,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'kexi.urls'
