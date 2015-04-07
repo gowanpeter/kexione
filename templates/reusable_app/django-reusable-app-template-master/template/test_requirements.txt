@@ -1,0 +1,10 @@
+coverage
+django-coverage
+django-nose
+fabric
+flake8
+ipdb
+mixer
+mock
+south
+tox

@@ -35,6 +35,7 @@ INTERNAL_IPS = ('127.0.0.1')
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.sites',
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -110,8 +111,10 @@ STATICFILES_DIRS = (
         #'static',
     #),
 
-
 STATIC_URL = '/static/'
+
+STATIC_ROOT = 'sstatic'
+
 #Template location
 
 TEMPLATE_CONTEXT_PROCESSORS = (
