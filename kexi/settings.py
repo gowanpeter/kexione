@@ -26,8 +26,10 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#DEBUG_TOOLBAR_PATCH_SETTINGS = False
-
+GRAPPELLI_INDEX_DASHBOARD = 'grappdshbd.CustomIndexDashboard'
+#GRAPPELLI_INDEX_DASHBOARD = {
+    #'kexi.admin.admin_site': 'kexi.dashboard.CustomIndexDashboard',
+#}
 
 INTERNAL_IPS = ('127.0.0.1')
 # Application definition
@@ -35,9 +37,10 @@ INTERNAL_IPS = ('127.0.0.1')
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.sites',
+    'django.contrib.contenttypes',
+    'grappelli.dashboard',
     'grappelli',
     'django.contrib.admin',
-    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
