@@ -33,13 +33,9 @@ class Piece(models.Model):
         return self.piece_name
 
 
-        class Admin:
-            list_display = "documentation_name"
-
-
-
-
-
+    class Admin:
+        list_display = ('piece_name', 'piece_description','post_edith','catalogue_id', 'heath_id', 'manufactured_date', 'cataloguer', 'catalogue_date','length_inches', 'width_inches', 'height_inches', 'weight_ounces', 'length_mm', 'width_mm', 'height_mm', 'weight_grams')
+        list_filter = ("post_edith")
 
 
 conditions = (

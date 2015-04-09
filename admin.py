@@ -51,7 +51,7 @@ class PieceAdmin(admin.ModelAdmin):
          'fields': [ 'piece_name', 'piece_description' ]
          }),
       ('Facts', {
-         'fields': ['catalogue_id', 'heath_id', 'manufactured_date', 'cataloguer', 'catalogue_date'],
+         'fields': ['post_edith','catalogue_id', 'heath_id', 'manufactured_date', 'cataloguer', 'catalogue_date'],
          }),
       ('Dimensions', {
          'fields': ['length_inches', 'width_inches', 'height_inches', 'weight_ounces', 'length_mm', 'width_mm', 'height_mm', 'weight_grams'],'classes': ['collapse']
