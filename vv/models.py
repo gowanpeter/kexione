@@ -6,6 +6,7 @@ class Widget(models.Model):
     #next: forms.py
 
 class Piece(models.Model):
+    post_edith = models.NullBooleanField()
     catalogue_id = models.CharField(max_length= 8)
     heath_id = models.CharField(max_length= 8, blank=True)
     piece_name = models.CharField(max_length=6, blank=True)
