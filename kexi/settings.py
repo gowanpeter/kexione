@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.sites',
     'django.contrib.contenttypes',
+    'ckeditor',
     'grappelli.dashboard',
     'grappelli',
     'django.contrib.admin',
@@ -63,6 +64,11 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'kexi.urls'
 
 WSGI_APPLICATION = 'kexi.wsgi.application'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+
+
 
 
 # Database

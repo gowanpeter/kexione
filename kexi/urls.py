@@ -4,6 +4,7 @@ from vv.views import current_datetime
 
 urlpatterns = patterns('',
     # Examples:
+    url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^time/$', current_datetime),
     url(r'^$', 'vv.views.home_page', name='home'),

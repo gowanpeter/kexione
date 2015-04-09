@@ -4,10 +4,10 @@ from vv.models import Piece, Condition, PublicationLookup, publication_link_piec
 #@admin.register(Author, Reader, Editor, site=custom_admin_site)
 
 
-#TabularInline
+#StackedInline
 #StackedInline
 
-class glaze_link_pieceInline(admin.TabularInline):
+class glaze_link_pieceInline(admin.StackedInline):
    model = GlazeLookup.glaze_pieces.through
    extra = 1
    #form = MyGlazeLookupForm
@@ -22,9 +22,11 @@ class PieceAdmin(admin.ModelAdmin):
          'fields': ['catalogue_id', 'heath_id', 'manufactured_date', 'cataloguer', 'catalogue_date'],
          }),
       ('Dimensions', {
-         'fields': ['length_inches', 'width_inches', 'height_inches', 'weight_ounces', 'length_mm', 'width_mm', 'height_mm', 'weight_grams'],'classes': ['collapse']
+         'fields': ['length_inches', 'width_inches', 'height_inches', 'weight_ounces', 'length_mm', 'width_mm', 'height_mm', 'weight_grams'],
+         'classes': ['grp-collapse grp- closed',],
          }),
-   ]
+         ]
+
    date_hierarchy = 'manufactured_date'
    inlines =  (glaze_link_pieceInline,)
 
@@ -36,7 +38,7 @@ admin.site.register(Piece, PieceAdmin)
 admin.site.register(GlazeLookup, GlazeLookupAdmin)
 
 
-class documentation_link_pieceInline(admin.TabularInline):
+class documentation_link_pieceInline(admin.StackedInline):
    model = Documentation.documentation_pieces.through
    model = documentation_link_piece
    extra = 1
@@ -65,7 +67,7 @@ class DocumentationAdmin(admin.ModelAdmin):
 admin.site.register(Documentation, DocumentationAdmin)
 
 
-class exhibition_link_pieceInline(admin.TabularInline):
+class exhibition_link_pieceInline(admin.StackedInline):
    model = exhibition_link_piece
    extra = 1
    #form = MyExhibitionLookupForm
@@ -92,7 +94,7 @@ class ExhibitionLookupAdmin(admin.ModelAdmin):
 admin.site.register(ExhibitionLookup, ExhibitionLookupAdmin)
 
 
-class  heath_line_link_pieceInline(admin.TabularInline):
+class  heath_line_link_pieceInline(admin.StackedInline):
    model =  heath_line_link_piece
    extra = 1
 
@@ -117,7 +119,7 @@ class HeathLineLookupAdmin(admin.ModelAdmin):
 admin.site.register(HeathLineLookup, HeathLineLookupAdmin)
 
 
-class  logo_link_pieceInline(admin.TabularInline):
+class  logo_link_pieceInline(admin.StackedInline):
    model =  logo_link_piece
    extra = 1
 
@@ -142,7 +144,7 @@ class LogoAdmin(admin.ModelAdmin):
 admin.site.register(Logo, LogoAdmin)
 
 
-class  maker_link_pieceInline(admin.TabularInline):
+class  maker_link_pieceInline(admin.StackedInline):
    model =  maker_link_piece
    extra = 1
 
@@ -167,7 +169,7 @@ class MakerLookupAdmin(admin.ModelAdmin):
 admin.site.register(MakerLookup, MakerLookupAdmin)
 
 
-class   material_link_pieceInline(admin.TabularInline):
+class   material_link_pieceInline(admin.StackedInline):
    model =   material_link_piece
    extra = 1
 
@@ -192,7 +194,7 @@ class MaterialLookupAdmin(admin.ModelAdmin):
 admin.site.register(MaterialLookup, MaterialLookupAdmin)
 
 
-class  method_link_pieceInline(admin.TabularInline):
+class  method_link_pieceInline(admin.StackedInline):
    model =  method_link_piece
    extra = 1
 
@@ -217,7 +219,7 @@ class MethodLookupAdmin(admin.ModelAdmin):
 admin.site.register(MethodLookup, MethodLookupAdmin)
 
 
-class   publication_link_pieceInline(admin.TabularInline):
+class   publication_link_pieceInline(admin.StackedInline):
    model =   publication_link_piece
    extra = 1
 
@@ -242,7 +244,7 @@ class PublicationLookupAdmin(admin.ModelAdmin):
 admin.site.register(PublicationLookup, PublicationLookupAdmin)
 
 
-class  setCollection_link_pieceInline(admin.TabularInline):
+class  setCollection_link_pieceInline(admin.StackedInline):
    model =  setCollection_link_piece
    extra = 1
 
@@ -265,5 +267,3 @@ class SetCollectionAdmin(admin.ModelAdmin):
 
 #admin.site.register(Piece, PieceAdmin)
 admin.site.register(SetCollection, SetCollectionAdmin)
-
-
